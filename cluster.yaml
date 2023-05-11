@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: step-eks-cluster
+  name: jenkins-eks-cluster
   region: us-east-1
 
 vpc:
@@ -12,12 +12,13 @@ vpc:
     public:
       us-east-1c: { id: subnet-077ca525e6614250a }
       us-east-1b: { id: subnet-06d01d73975c02610 }
-      us-east-1: { id: subnet-043960468b941d800 }
+      us-east-1f: { id: subnet-043960468b941d800 }
 
 managedNodeGroups:
   - name: ng-db
     instanceType: t3.small
-    labels: { role: builders }
+    #labels: { role: builders }
+    desiredCapacity: 2
     minSize: 2
     maxSize: 4
     ssh: 
