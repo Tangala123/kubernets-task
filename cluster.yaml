@@ -21,7 +21,6 @@ managedNodeGroups:
     desiredCapacity: 2
     minSize: 2
     maxSize: 4
-    ssh: 
-      allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+    
     tags:
       Name: ng-db
